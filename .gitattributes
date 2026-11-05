@@ -1,0 +1,5 @@
+# Ignorar reportes HTML y artefactos en las estadísticas de lenguaje
+playwright-report/* linguist-vendored
+playwright-report/** linguist-vendored
+test-results/* linguist-vendored
+*.html linguist-detectable=false
