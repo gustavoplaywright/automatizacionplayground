@@ -1,0 +1,13 @@
+# Dependencias de Node
+node_modules/
+
+# Reportes y artefactos de ejecucion de Playwright
+playwright-report/
+blob-report/
+test-results/
+playwright/.cache/
+
+# Entorno y variables de sistema
+.env
+.DS_Store
+Thumbs.db
