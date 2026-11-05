@@ -11,8 +11,8 @@ export default defineConfig({
   use: {
     baseURL: 'https://gustavoplaywright.github.io/playgroundweb',
     trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+  /*  screenshot: 'only-on-failure',*/
+    /*video: 'retain-on-failure',*/
   },
 
   projects: [
