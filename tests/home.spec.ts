@@ -50,4 +50,25 @@ test.describe('Pruebas de navegación - del Home a catalogo', () => {
     });
   });
 
+
+  /*Navegación a catalog.html a traves del catalogo y filtros de la card de abajo*/
+  test.describe('Pruebas de navegación - del Home a catalogo por el botón catalogo y filtros', () => {
+  test('Desde botón catalogo y filtros, al hacer click debe redirigir a la página catalogo.html', async ({ page }) => {
   
+    await test.step('click en catalogo y filtros', async () => {
+    
+      await page.goto('https://gustavoplaywright.github.io/playgroundweb/index.html');
+      await expect(page.locator('h1')).toBeVisible();
+      await page.getByRole('link', { name: 'Catálogo y filtros Busca,' }).click();
+      await expect(page).toHaveURL(/.*catalog.html/);
+      });
+
+    await test.step('verificar que se cargó la página catalogo.html', async () => {
+      await expect(page.locator('h1')).toBeVisible();
+      await expect(page.locator('h1')).toHaveText('Un catálogo para probar');
+      });
+
+    });
+  });
+
+
