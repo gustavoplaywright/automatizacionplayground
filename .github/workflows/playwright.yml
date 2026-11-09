@@ -1,0 +1,26 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [ main ]
+  repository_dispatch:
+    types: [run-playwright-tests] # Escucha el aviso que envía playgroundweb
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          
+      - name: Instalar dependencias
+        run: npm ci
+        
+      - name: Instalar navegadores de Playwright
+        run: npx playwright install --with-deps
+        
+      - name: Ejecutar pruebas E2E
+        run: npx playwright test
