@@ -210,3 +210,5 @@ test.describe('Pruebas de navegación - del Home a catalogo', () => {
       await expect(texto).toBeVisible();
     });
   });
+
+  
