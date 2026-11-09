@@ -47,23 +47,6 @@ await expect(page.locator('h1')).toBeVisible();
 });
 });
 
-/*Valida que al seleccionar un filtro de categoría se muestren los productos correspondientes*/
-test.describe('Filtrar productos por categoría', () => {
-  test('Validar filtrado de productos por categoría', async ({ page }) => { 
-              await page.goto('https://gustavoplaywright.github.io/playgroundweb/catalog.html');
-await expect(page.locator('h1')).toBeVisible();
-await test.step('Filtrar productos por categoría', async () => {
-  await page.getByTestId('category-filter').selectOption('starter');
- await expect(page.getByText('Kit')).toBeVisible();
-await page.getByTestId('category-filter').selectOption('all');
-await expect(page.getByText('Kit')).toBeVisible();
-await expect(page.getByText('Plan')).toBeVisible();
-await expect(page.getByText('Recurso')).toBeVisible();
-});
-  });
-}); 
-
-
 
 test('Filtrar catálogo por categoría Kits y validar que solo se muestren kits', async ({ page }) => {
   // 1. Navegar a la página de catálogo
